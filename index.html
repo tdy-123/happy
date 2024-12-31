@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>新年倒计时</title>
+  </head>
+  <body id = "bgc">
+    <div class="container">
+      <h2><span id="title">新年倒计时</span>2025</h2>
+      <div class="countdown">
+        <div id="day">--</div>
+        <div id="hour">--</div>
+        <div id="minute">--</div>
+        <div id="second">--</div>
+      </div>
+      <br><br><br><br>
+
+      <button id="playButton">点击播放音乐</button>
+      <audio id="a1" src="./music/jinniandongtianpeizhewoba.mp3"></audio>
+    </div>
+      <script  src="js/script.js"></script>
+
+      <script>
+        window.onload = function () {
+            let oA = document.querySelector("#a1");
+            let playButton = document.querySelector("#playButton");
+
+            playButton.onclick = function () {
+                oA.volume = 0.5; // 设置音量
+                oA.play() // 播放音频
+                    .catch(error => {
+                        console.error("播放失败:", error);
+                    });
+            };
+        };
+    </script>
+ 
+  </body>
+</html>
